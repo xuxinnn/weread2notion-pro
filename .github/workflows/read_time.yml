@@ -75,6 +75,9 @@ jobs:
           WEREAD_PAGE: ${{ secrets.NOTION_PAGE }}
           WEREAD_COOKIE: ${{ secrets.WEREAD_COOKIE }}
 
+      - name: Debug WEREAD
+        run: echo $WEREAD
+
       - name: read time sync
         run: |
           read_time
