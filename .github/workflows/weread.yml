@@ -41,6 +41,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Export WEREAD as JSON
+        run: |
+          echo "WEREAD={\"token\":\"${WEREAD_TOKEN}\",\"page\":\"${WEREAD_PAGE}\",\"cookie\":\"${WEREAD_COOKIE}\"}" >> $GITHUB_ENV
+        env:
+          WEREAD_TOKEN: ${{ secrets.WEREAD_TOKEN }}
+          WEREAD_PAGE: ${{ secrets.WEREAD_PAGE }}
+          WEREAD_COOKIE: ${{ secrets.WEREAD_COOKIE }}
+          
       - name: weread book sync
         run: |
           book
