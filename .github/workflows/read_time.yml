@@ -71,8 +71,8 @@ jobs:
         run: |
           echo "WEREAD={\"token\":\"${WEREAD_TOKEN}\",\"page\":\"${WEREAD_PAGE}\",\"cookie\":\"${WEREAD_COOKIE}\"}" >> $GITHUB_ENV
         env:
-          WEREAD_TOKEN: ${{ secrets.WEREAD_TOKEN }}
-          WEREAD_PAGE: ${{ secrets.WEREAD_PAGE }}
+          WEREAD_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          WEREAD_PAGE: ${{ secrets.NOTION_PAGE }}
           WEREAD_COOKIE: ${{ secrets.WEREAD_COOKIE }}
 
       - name: read time sync
