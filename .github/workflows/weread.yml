@@ -49,7 +49,10 @@ jobs:
           WEREAD_TOKEN: ${{ secrets.NOTION_TOKEN }}
           WEREAD_PAGE: ${{ secrets.NOTION_PAGE }}
           WEREAD_COOKIE: ${{ secrets.WEREAD_COOKIE }}
-          
+
+      - name: Debug WEREAD
+        run: echo $WEREAD
+        
       - name: weread book sync
         run: |
           book
