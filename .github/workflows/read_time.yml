@@ -66,18 +66,6 @@ jobs:
           git add .
           git commit -m 'add new heatmap' || echo "nothing to commit"
           git push || echo "nothing to push"
-
-      - name: Export WEREAD as JSON
-        run: |
-          echo "WEREAD={\"token\":\"${WEREAD_TOKEN}\",\"page\":\"${WEREAD_PAGE}\",\"cookie\":\"${WEREAD_COOKIE}\"}" >> $GITHUB_ENV
-        env:
-          WEREAD_TOKEN: ${{ secrets.WEREAD_TOKEN }}
-          WEREAD_PAGE: ${{ secrets.WEREAD_PAGE }}
-          WEREAD_COOKIE: ${{ secrets.WEREAD_COOKIE }}
-
-      - name: Debug WEREAD
-        run: echo $WEREAD
-
       - name: read time sync
         run: |
           read_time
